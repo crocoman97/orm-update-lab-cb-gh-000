@@ -56,7 +56,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE name=?
     SQL
-    row = DB[:conn].execute(sql,name)
+    row = DB[:conn].execute(sql,name).flatten
     new_from_db(row)
   end
   
